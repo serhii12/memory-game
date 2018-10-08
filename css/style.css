@@ -265,5 +265,5 @@ img {
 }
 
 .front-face {
-  transform: rotateY(180deg); /*By Default set the back to be rotate */
+  transform: rotateY(180deg); /*By Default set the front to be rotate */
 }

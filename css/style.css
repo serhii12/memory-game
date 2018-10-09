@@ -240,7 +240,7 @@ img {
 }
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
   justify-content: center;
   grid-gap: 10px;
   width: 640px;
@@ -277,5 +277,5 @@ img {
 }
 
 .memory-card.flip {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Use JS to add class
 }

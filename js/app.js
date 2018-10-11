@@ -1,3 +1,12 @@
+	//function generateHTML([h, v]) {
+	// 	return `
+	// 	<div class="memory-card" data-framework="aurelia">
+	// 		<img class="front-face" src="assets/${}" alt="Aurelia" />
+	// 		<img class="back-face" src="assets/${}" alt="JS Badge" />
+	// 	</div>
+	// 	`;
+	// }
+
 // Define first and second card in global scope
 let firstCard, secondCard;
 // Check if card has been flipped

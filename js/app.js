@@ -1,126 +1,41 @@
-/*
-MVC
-
-1. New Game
-2. End Game = Exit game
-* Show Result 
-3. Reset Game -> New game
-4. Exit Game
-
-
-New Game:
-* Init game
-** Setup model
-** Init user data
-* Start game
-** Start timer
-** Show game
-
-Setup ApplicationModel
-* status
-** intro => page
-** game => page
-** result => page
-
-Setup GameModel
-
-* Board size
-* Board data
-* Visual Item Data
-** id
-** img src 
-** Item size
-* Opened item 
-** id
-** position
-* Count of the opened items
-* timer
-** max timer value
-* user
-** name
-
-ApplicationController(Root)
-** Intro (Intro page)
-** New Game
-** Reset Game -> New game
-** Show Result 
-** End Game = Exit game
-** Exit Game
-+ 
-GameController
-* Game
-** Click on Item
-** Timer -> End Game -> ApplicationController.EndGame
-
-IntroView -> intro.html
-GameView -> game.html
-ResultView -> result.html
-
-<div id="intro" class="page active">
-
-</div>
-<div id="game" class="page">
-...
-</div>
-<div id="result" class="page">
-
-</div>
-----------------------------------
-
-Board data
-[
-    [{id:1,opened:false},{id:2,opened:true},3,4],
-    [1,2,3,4],
-    [1,2,3,4],
-    [1,2,3,4]
-]
-
-Visual Item Data
-[
-    {id:0,img:"img/back.png"},
-    {id:1,img:"img/1.png"},
-    {id:2,img:"img/2.png"},
-    {id:3,img:"img/3.png"},
-    {id:4,img:"img/4.png"}
-]
-Opened item 
-{
-    id:-1,
-    position:[0,0]
+// Define first and second card in global scope
+let firstCard, secondCard;
+// Check if card has been flipped
+let hasFlipped = false;
+// Select all of the cards 
+const cards = document.querySelectorAll('.memory-card');
+// Load all event listeners
+loadEventListeners();
+// Events
+function loadEventListeners() {
+  //  add EventListeners to each card on the board
+  cards.forEach(card => card.addEventListener('click', flipCard));
 }
+// Flip the card add class flip and store cards and compare
+function flipCard() {
+  this.classList.add('flip');
+  if (!hasFlipped) {
+		hasFlipped = true;
+		// Set the first card to clicked card
+		firstCard = this;
+		// exit
+    return;
+	}
+	// Set the second card to clicked card
+	secondCard = this;
+  hasFlipped = false;
+  compareValues();
+}
+function compareValues() {
+	// Check dataset value of the cards
+  if (firstCard.dataset.framework !== secondCard.dataset.framework) {
+		setTimeout(() => {
+			firstCard.classList.remove('flip');
+			secondCard.classList.remove('flip');
+		}, 500);
+	}
+};
 
-Click on Item:
-** detect item position and get item data => <div class="item" data-item-id="1" data-item-position="2,4" data-item-opened="false" onclick="itemClick(e)"/>
-** check and set Count of the opened items => 0 -> 1 -> 1 -> 2 
-* if Count of the opened items === board width  board height => End game
-
-
-// Structure option 1
-let value1, value2 = null;
-
-handleClick(event) {
+function shuffleCards() {
   
 }
-
-compareValues(val1, val2) {
-  
-}
-
-shuffleCards() {
-  
-}
-
-renderCards() {
-   
-}
-
-initGame() {
-   
-}
-
-$(document).ready(() => {
-    
-})
-
-
-*/

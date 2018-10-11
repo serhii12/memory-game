@@ -279,3 +279,5 @@ img {
 .memory-card.flip {
   transform: rotateY(180deg); /* Use JS to add class */
 }
+
+/* PAGE DISPLAY */

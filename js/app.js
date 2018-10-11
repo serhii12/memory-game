@@ -36,6 +36,10 @@ function compareValues() {
 	}
 };
 
-function shuffleCards() {
-  
-}
+// Put the cards into random position each time page load or reload button clicked
+(function shuffleCards() {
+  cards.forEach(card => {
+		let randonSpot = Math.floor(Math.random() * 12);
+		card.style.order = randonSpot;
+	});
+})();

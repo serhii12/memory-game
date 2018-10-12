@@ -67,4 +67,4 @@ class AppController {
   }
 }
 const app = new AppController();
-app.showPage('game');
+app.showPage('Game');

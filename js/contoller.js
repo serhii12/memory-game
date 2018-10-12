@@ -20,7 +20,7 @@ class View {
 }
 class GameController extends View {
   constructor() {
-    super('#Game');
+    super('#game');
     console.log('GameController');
     // this.view.innerHTML = "<div>AAAAAAAAAAA</div>";
   }
@@ -35,7 +35,7 @@ class GameController extends View {
 }
 class IntroController extends View {
   constructor() {
-    super('#Intro');
+    super('#intro');
     console.log('IntroController');
   }
   show() {
@@ -67,4 +67,4 @@ class AppController {
   }
 }
 const app = new AppController();
-app.showPage('Game');
+app.showPage('game');

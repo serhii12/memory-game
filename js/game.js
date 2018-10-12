@@ -1,15 +1,15 @@
-	//function generateHTML([h, v]) {
+	//function generateHTML(name, file) {
 	// 	return `
-	// 	<div class="memory-card" data-framework="aurelia">
-	// 		<img class="front-face" src="assets/${}" alt="Aurelia" />
-	// 		<img class="back-face" src="assets/${}" alt="JS Badge" />
+	// 	<div class="memory-card" data-framework="${}">
+	// 		<img class="front-face" src="assets/${}" alt="${}" />
+	// 		<img class="back-face" src="assets/js-badge.svg" alt="JS Badge" />
 	// 	</div>
 	// 	`;
 	// }
 
 // Define first and second card in global scope
 let firstCard, secondCard;
-// Check if card has been flipped
+// set flipped to false so we could perform checks
 let hasFlipped = false;
 // Select all of the cards 
 const cards = document.querySelectorAll('.memory-card');
@@ -41,7 +41,7 @@ function compareValues() {
 		setTimeout(() => {
 			firstCard.classList.remove('flip');
 			secondCard.classList.remove('flip');
-		}, 500);
+		}, 1000);
 	}
 };
 

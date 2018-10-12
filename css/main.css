@@ -193,6 +193,9 @@ body {
 body {
   background: #2c3e50; }
 
+.hidden {
+  display: none !important; }
+
 img {
   max-width: 100%;
   width: 100%;
@@ -214,8 +217,8 @@ body {
   font-size: 1.6rem; }
 
 h1 {
-  font-size: 70px;
-  font-size: 7rem;
+  font-size: 90px;
+  font-size: 9rem;
   letter-spacing: 2.5px;
   line-height: 28px;
   text-transform: uppercase; }

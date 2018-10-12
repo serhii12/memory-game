@@ -204,10 +204,12 @@ img {
 .wrapper {
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   height: 100vh; }
   .wrapper h1 {
+    margin-top: 0;
     margin-bottom: 4rem; }
 
 body {
@@ -267,24 +269,26 @@ select {
   background-position: 95% center; }
 
 .memory-game {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
-  justify-content: center;
-  grid-gap: 10px;
-  width: 640px;
-  height: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
   perspective: 1000px; }
-  .memory-game .memory-card {
+  .memory-game .card {
+    width: calc(20% - 10px);
+    height: calc(33.3333% - 10px);
+    margin: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform 0.5s;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
-    .memory-game .memory-card:active {
+    .memory-game .card:active {
       transform: scale(0.97);
       transition: transform 0.2s; }
-    .memory-game .memory-card .front-face,
-    .memory-game .memory-card .back-face {
+    .memory-game .card .front-face,
+    .memory-game .card .back-face {
       position: absolute;
       height: 100%;
       width: 100%;
@@ -298,6 +302,6 @@ select {
   transform: rotateY(180deg);
   /*By Default set the front to be rotate */ }
 
-.memory-card.flip {
+.card.flip {
   transform: rotateY(180deg);
   /* Use JS to add class */ }

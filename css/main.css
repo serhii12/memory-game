@@ -233,8 +233,8 @@ h1 {
 .container {
   display: flex;
   flex-direction: column;
-  height: 18%;
   justify-content: space-between;
+  height: 176px;
   align-items: center; }
   .container .diff-level {
     font-size: 30px;
@@ -271,9 +271,11 @@ select {
 .memory-game {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
-  height: 50%;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 51%;
+  height: 46%;
+  /* margin: 0 auto; */
   perspective: 1000px; }
   .memory-game .card {
     width: calc(20% - 10px);

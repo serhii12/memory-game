@@ -42,7 +42,7 @@ function removeClass() {
     secondCard.classList.remove( 'flip' );
   }, 1000 );
 }
-const assets = [
+const assetsNames = [
 	'angular',
 	'aurelia',
 	'backbone',
@@ -72,19 +72,22 @@ function generateHTML( nameOfTheFile ) {
 		<img class="back-face" src="assets/js-badge.svg" alt="JS Badge" />
 	</div>`;
 }
-const html = assets.map( generateHTML ).join( '' );
-card.innerHTML = html;
+
+(function renderCards() {
+  const html = assetsNames.map( generateHTML ).join( '' );
+  card.innerHTML = html;
+})();
 // Select all of the cards 
 const cards = document.querySelectorAll( '.card' );
 // add EventListeners to each card on the board
-cards.forEach( card => card.addEventListener( 'click', flipCard ) );
+cards.forEach( card => card.addEventListener( 'click', flipCard ));
 // Put the cards into random position each time page load or reload button clicked
-function shuffleCards() {
+(function shuffleCards() {
   cards.forEach( card => {
-    card.style.order = randomNumber( 12 );
+    card.style.order = randomNumber( assetsNames.length );
     // RandomNumber will be determined by user difficulty
     // Easy 12
     // Hard 
     // Impossible
-  } );
-};
+  });
+})();

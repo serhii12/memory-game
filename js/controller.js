@@ -1,6 +1,12 @@
 class Controller {
-  constructor() {
-    
+  constructor(view) {
+    // this.view = new view();
+  }
+  show() {
+    this.view.show();
+  }
+  destroy() {
+    this.view.destroy();
   }
 }
 class View {

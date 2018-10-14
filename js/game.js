@@ -3,6 +3,7 @@ let firstCard, secondCard = null;
 // set flipped to false so we could perform checks
 let hasFlipped = false;
 let isComparing = false;
+let totalCards = 0;
 // Select card board
 const card = document.querySelector('.memory-game');
 // Flip the card add class flip and store cards and compare
@@ -10,6 +11,13 @@ function flipCard() {
   if (isComparing) return;
   if (this === firstCard) return;
   this.classList.add('flip');
+  totalCards++;
+  if (totalCards === 2) {
+    setTimeout(() => {
+      alert('You won!');
+    }, 200);
+  }
+  console.log(totalCards);
   if (!hasFlipped) {
     hasFlipped = true;
     // Set the first card to clicked card
@@ -38,6 +46,8 @@ const removeEventlistener = () => {
 const removeClass = () => {
   // Remove class that turns the card around
   isComparing = true;
+  totalCards -= 2;
+  console.log(totalCards);
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
@@ -79,3 +89,5 @@ const load = () => {
   shuffleCards();
 }
 window.onload = load;
+
+console.log(totalCards);

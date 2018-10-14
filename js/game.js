@@ -17,7 +17,6 @@ function flipCard() {
       alert('You won!');
     }, 200);
   }
-  console.log(totalCards);
   if (!hasFlipped) {
     hasFlipped = true;
     // Set the first card to clicked card
@@ -47,7 +46,6 @@ const removeClass = () => {
   // Remove class that turns the card around
   isComparing = true;
   totalCards -= 2;
-  console.log(totalCards);
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
@@ -89,5 +87,3 @@ const load = () => {
   shuffleCards();
 }
 window.onload = load;
-
-console.log(totalCards);

@@ -12,7 +12,7 @@ function flipCard() {
   if (this === firstCard) return;
   this.classList.add('flip');
   totalCards++;
-  if (totalCards === 2) {
+  if (totalCards === 16) {
     setTimeout(() => {
       alert('You won!');
     }, 200);

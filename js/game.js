@@ -84,6 +84,7 @@ const cards = document.querySelectorAll('.card');
 // add EventListeners to each card on the board
 cards.forEach(card => card.addEventListener('click', flipCard));
 const load = () => {
+  alert('The goal is to match all of the card. Go! go!');
   shuffleCards();
 }
 window.onload = load;
